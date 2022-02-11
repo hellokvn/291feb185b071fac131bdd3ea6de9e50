@@ -1,0 +1,19 @@
+$tablet: 600px;
+
+body {
+  padding: 1rem;
+}
+
+.container {
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+// mixins
+
+@mixin tablet {
+  @media screen and (min-width: $tablet), print {
+    @content;
+  }
+}
