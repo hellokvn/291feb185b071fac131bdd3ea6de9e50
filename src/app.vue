@@ -1,27 +1,41 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+  <div class="container">
+    <div class="tile is-ancestor">
+      <div class="tile is-vertical is-12">
+        <div class="tile is-block-mobile">
+          <div class="tile is-parent">
+            <Tile @click="onClickTile" :isChild="true">1</Tile>
+          </div>
+          <div class="tile is-vertical">
+            <div class="tile is-parent">
+            <Tile @click="onClickTile" :isChild="true">2</Tile>
+            </div>
+            <div class="tile">
+              <div class="tile is-parent">
+            <Tile @click="onClickTile" :isChild="true">3</Tile>
+              </div>
+              <div class="tile is-parent">
+            <Tile @click="onClickTile" :isChild="true">4</Tile>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tile is-block-mobile">
+          <div class="tile is-parent is-vertical">
+            <Tile @click="onClickTile" :isChild="true">5</Tile>
+            <Tile @click="onClickTile" :isChild="true" :isLarge="true">6</Tile>
+          </div>
+          <div class="tile is-parent">
+            <Tile @click="onClickTile" :isChild="true">7</Tile>
+          </div>
+          <div class="tile is-parent is-vertical">
+            <Tile @click="onClickTile" :isChild="true" :isLarge="true">8</Tile>
+            <Tile @click="onClickTile" :isChild="true">9</Tile>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
-<script lang="ts">
-import { Options, Vue } from "vue-class-component";
-import HelloWorld from "./components/HelloWorld.vue";
-
-@Options({
-  components: {
-    HelloWorld,
-  },
-})
-export default class App extends Vue {}
-</script>
-
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+<script src="./app.ts" lang="ts" />
